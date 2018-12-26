@@ -38,7 +38,7 @@ const connect = (value1,value2) => {
     return result;
   }
 }
-
+                        //generacion de funcion de forma implicita
 const componenteConectado = connect(() => 2,() => 3);
 
 componenteConectado(`App`);
@@ -48,3 +48,23 @@ componenteConectado(`App`);
             () => 3
             "App-6"
 */
+
+// ------------------------------------------------------------ //
+const dispatch = {};
+
+const connect = (mapStateToProps,mapDispatchToProps) => {
+
+  return (componente) => {
+    const result = `${componente}-${mapStateToProps(dispatch) * mapDispatchToProps(dispatch)}`;
+    console.log(result);
+    return result;
+  }
+}
+
+const mapStateToProps = (dispatch) => 2;  //generacion de funcion de forma explicita
+const mapDispatchToProps = (dispatch) => 3;
+
+const componenteConectado = connect(mapStateToProps, mapDispatchToProps)('app');
+// Aqui se tiene un literal ('app') que se transforma en otro literal despues de haber aplicado la funcion connect
+// La funcion connect solo agrega algo al literal que tenemos  -> ('app'), es decir, toma el parametro de entrada
+// y le agrega algo, esa es la funcion del connect con los componentes.
