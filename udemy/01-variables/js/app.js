@@ -18,3 +18,14 @@ const client = function(name){
 client('Cesar')
 
 //En las Function Expression  siempre hay que declarar las funciones antes de usarlas
+
+
+// ------------------------------------------------------------- //
+// Funciones con parametros
+// Otra forma de ingresar los parametros como valores por defecto
+function activity(name = 'Walter White', activity = 'Enseñar quimica'){
+  console.log(`La persona ${name}. esta realizando la actividad ${activity}`);
+}
+
+activity('Walter Green', 'Mathematics')
+activity(); //Uso de valor por defecto
