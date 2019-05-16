@@ -1,5 +1,7 @@
+import Todos from './todos.js';
+
 // HERENCIA
-class Buys extends Todo {
+export default class Buys extends Todos {
   constructor(name, priority, cant){
     super(name, priority);  //Al super constructor se le pasan los atributos de la clase que se esta heredando
     this.cant = cant;
