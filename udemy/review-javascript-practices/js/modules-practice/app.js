@@ -9,10 +9,17 @@
 // completeTodo();
 
 
-import Todo from './todos.js';
+import Todos from './todos.js';
+import Buys from './buys.js';
 
-const todo1 = new Todo('Learning JS');
+const todo1 = new Todos('Learning JS');
 
 console.log(todo1);
 
 todo1.display()
+
+const compra1 = new Buys('Pizza', 'urgency', 2);
+
+console.log(compra1);
+
+compra1.display()
